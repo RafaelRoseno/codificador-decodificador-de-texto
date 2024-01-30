@@ -1,49 +1,24 @@
-var UTF16codesReference = [
-    79, //O
-    111,//o
+var encryptReferences = [
+    [/a/g, /e/g, /i/g, /o/g, /u/g],
+    ['ai', 'enter', 'imes', 'ober', 'ufat']
 ];
 
 function processEncrypt(){
     let textToEncrypt = document.querySelector('.main-container__input-area__textarea');
-    let charCodes = getUTF16codesFromString(textToEncrypt.value);
-    let encrypted = encrypt(charCodes);
-
     let displayResult = document.querySelector('.main-container__display-area__result');
-    displayResult.innerHTML = getStringFromUTF16code(encrypted);
+    displayResult.innerHTML = encrypt(textToEncrypt.value);
     textToEncrypt.value = '';
-
 }
 
-function encrypt(charCodes){
-    Array.from(UTF16codesReference).forEach(function(code){
-        do {
-            var indexOf = charCodes.findIndex(function(value){
-                return (value == code);
-            });
-            if (indexOf != -1) charCodes.splice(indexOf, 1, 72);
-            
-        } while (indexOf != -1);
-    });
-    return charCodes;
+function encrypt(textToEncrypt){
+    for (let column=0; column<encryptReferences[0].length; column++){
+        let expression = encryptReferences[0][column];
+        let value = encryptReferences[1][column];
+        textToEncrypt = textToEncrypt.replace(expression, value);
+    }
+    return textToEncrypt;
 }
 
 function decrypt(){
 
-}
-
-function getUTF16codesFromString(string){
-    let charCodes = [];
-    Array.from(string).forEach(function(character){
-        charCodes.push(character.charCodeAt());
-    });
-    console.log(`getUTF16codesFromString -  ${charCodes}`);
-    return charCodes;
-}
-
-function getStringFromUTF16code(charCodes){
-    let string = '';
-    Array.from(charCodes).forEach(function(code){
-        string = string.concat(String.fromCharCode(code));
-    });
-    return string;
 }

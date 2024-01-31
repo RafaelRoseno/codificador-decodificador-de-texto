@@ -8,20 +8,23 @@
     <title>Decodificador</title>
 </head>
 <body>
-    <header class="header-container"></header>
+    <header class="header-container">
+        <p>logo</p>
+    </header>
     <main class="main-container">
-        <h1>Decodificador</h1>
         <section class="main-container__input-area">
-            <textarea class="main-container__input-area__textarea"></textarea>
-            <input class="main-container__input-area__encrypt" onclick="processEncrypt()" type="button" value="criptografar"/>
-            <input class="main-container__input-area__decrypt" onclick="processDecrypt()" type="button" value="descriptografar"/>
+            <textarea class="main-container__input-area__textarea" placeholder="Escreva aqui"></textarea>
+            <div class="main-container__input-area__buttons">
+                <input class="main-container__input-area__encrypt" onclick="processEncrypt()" type="button" value="Criptografar"/>
+                <input class="main-container__input-area__decrypt" onclick="processDecrypt()" type="button" value="Descriptografar"/>
+            </div>
         </section>
         <section class="main-container__display-area">
             <p class="main-container__display-area__result"> resultado:</p>
         </section>
     </main>
     <footer class="footer-container">
-        <p></p>
+        <p>Desenvolvido por Rafael</p>
     </footer>
     <script src="scripts/script.js" defer></script>
 </body>

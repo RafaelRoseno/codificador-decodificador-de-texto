@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:slnt@-10..0&display=swap');
+
+:root{
+    --primary-color: #0A3871;
+    --secundary-color: #F3F5FC;
+    --tertiary-color: #D8DFE8;
+    --hover-color: #FAF6F0;
+
+    --primary-font: 'Inter', sans-serif;
+
+    --primary-font-size: 1.5rem;
+    --secundary-font-size: 1rem;
+    --tertiary-font-size: 1.25rem;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+    background-color: var(--secundary-color);
+    color: var(--secundary-color);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.header-container{
+    background-color: var(--tertiary-color);
+}
+
+.main-container{
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 5% 15%;
+}
+
+.main-container__input-area{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.main-container__input-area__textarea{
+    height: 80%;
+    padding: 5% 5%;
+    font-family: var(--primary-font);
+    font-size: var(--primary-font-size);
+    background-color: var(--secundary-color);
+    resize: none;
+    border: none;
+}
+
+.main-container__input-area__textarea:focus{
+    outline: none;
+}
+
+.main-container__input-area__buttons{
+    padding: 0% 0%;
+    display: flex;
+    justify-content: space-between;
+    gap: 10%;
+}
+
+.main-container__input-area__buttons input{
+    width: 50%;
+    padding: 24px 0;
+    border-radius: 24px;
+}
+
+.main-container__input-area__encrypt{
+    background-color: var(--primary-color);
+    color: #fff;
+    border: 1px solid var(--primary-color);
+}
+
+.main-container__input-area__encrypt:hover{
+    background-color: #0D478D;
+}
+
+.main-container__input-area__decrypt{
+    background-color: var(--secundary-color);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.main-container__input-area__decrypt:hover{
+    background-color: var(--tertiary-color);
+    transition-duration: 0.4s;
+}
+
+.main-container__display-area{
+    width: 30%;
+    height: 100%;
+    border-radius: 20px;
+    padding: 2% 5%;
+    overflow-y:auto;
+    background-color: #fff;
+}
+
+.main-container__display-area__result{
+    font-family: var(--primary-font);
+    font-size: var(--secundary-font-size);
+    color: #000;
+    word-break: break-all;
+}
+
+.footer-container{
+    padding: 15px;
+    text-align: center;
+    font-family: var(--primary-font);
+    font-size: var(--tertiary-font-size);
+    color: var(--primary-color);
+    background-color: var(--tertiary-color);
+}

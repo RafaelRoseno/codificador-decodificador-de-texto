@@ -25,7 +25,7 @@ function processDecrypt() {
     outputProcess(decrypted);
 }
 
-// Apresenta o resultado da criptografia/descriptografia na tela e aplica estilo na exibicao
+// Apresenta o resultado da criptografia/descriptografia na tela com certa alteracao de estilo na exibicao
 function outputProcess(result) {
     let displayResult = document.querySelector(DISPLAY_AREA_SELECTOR);
     displayResult.textContent = result;

@@ -34,7 +34,7 @@ body{
 }
 
 .main-container{
-    height: 60%;
+    height: 80%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -116,7 +116,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 10px;
+    gap: 20px;
     visibility: visible;
 }
 
@@ -142,6 +142,22 @@ body{
     font-size: var(--tertiary-font-size);
     color: var(--neutral-color);
     word-break: break-all;
+}
+
+.main-container__display-area__no-content__copy-button{
+    width: 100%;
+    padding: 24px 0;
+    border-radius: 24px;
+    visibility: hidden;
+    background-color: #fff;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+
+}
+
+.main-container__display-area__no-content__copy-button:hover{
+    background-color: var(--tertiary-color);
+    transition-duration: 0.4s;
 }
 
 .footer-container{

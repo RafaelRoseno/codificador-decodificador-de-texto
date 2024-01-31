@@ -1,5 +1,6 @@
 const NO_CONTENT_MESSAGE_SELECTOR = '.main-container__display-area__no-content';
-const DISPLAY_AREA_SELECTOR = '.main-container__display-area__result';
+const COPY_BUTTON_SELECTOR = '.main-container__display-area__no-content__copy-button';
+const DISPLAY_RESULT_SELECTOR = '.main-container__display-area__result';
 const TEXTAREA_SELECTOR = '.main-container__input-area__textarea';
 
 const ENCRYPTION_REFERENCES = [
@@ -45,6 +46,12 @@ function replaceAllExpressions(text, expressionList){
     return text;
 }
 
+// Copia o texto da area de exibicao para a area de transferencia
+function copy() {
+    let textForCopy = document.querySelector(DISPLAY_RESULT_SELECTOR);
+    navigator.clipboard.writeText(textForCopy.textContent);
+}
+
 function getTextAreaContent() {
     const inputText = document.querySelector(TEXTAREA_SELECTOR);
     if (inputText.value.length == 0){
@@ -56,16 +63,20 @@ function getTextAreaContent() {
 }
 
 function showResult(result) {
-    let displayResult = document.querySelector(DISPLAY_AREA_SELECTOR);
+    let displayResult = document.querySelector(DISPLAY_RESULT_SELECTOR);
     displayResult.textContent = result;
 }
 
 function hideNoContentMessage(){
     let noContentDiv = document.querySelector(NO_CONTENT_MESSAGE_SELECTOR);
     noContentDiv.style.visibility = 'hidden';
+    let copyButton = document.querySelector(COPY_BUTTON_SELECTOR);
+    copyButton.style.visibility = 'visible';
 }
 
 function showNoContentMessage(){
     let noContentDiv = document.querySelector(NO_CONTENT_MESSAGE_SELECTOR);
     noContentDiv.style.visibility = 'visible';
+    let copyButton = document.querySelector(COPY_BUTTON_SELECTOR);
+    copyButton.style.visibility = 'hidden';
 }

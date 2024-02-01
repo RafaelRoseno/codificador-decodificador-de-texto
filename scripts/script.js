@@ -29,11 +29,11 @@ function processDecrypt() {
     outputProcess(decrypted, textToDecrypt);
 }
 
-// Apresenta o resultado da criptografia/descriptografia na tela com certa alteracao de estilo na exibicao
+// Processa as etapas exibicao do texto na tela
 function outputProcess(result, textAreaContent) {
     showResult(result);
     textAreaContent.value = '';
-    hideNoContentMessage();
+    setupForMessageDisplay();
 }
 
 // Itera uma lista de expressoes regulares e substitui seu valor em uma string
@@ -56,7 +56,7 @@ function getTextAreaContent() {
     const inputText = document.querySelector(TEXTAREA_SELECTOR);
     if (inputText.value.length == 0){
         showResult('');
-        showNoContentMessage();
+        setupForNoContentMessage();
         return null;
     } 
     return inputText;
@@ -67,16 +67,20 @@ function showResult(result) {
     displayResult.textContent = result;
 }
 
-function hideNoContentMessage(){
+function setupForMessageDisplay(){
     let noContentDiv = document.querySelector(NO_CONTENT_MESSAGE_SELECTOR);
-    noContentDiv.style.visibility = 'hidden';
+    noContentDiv.style.display = 'none';
+    let resultText = document.querySelector(DISPLAY_RESULT_SELECTOR);
+    resultText.style.display = 'initial';
     let copyButton = document.querySelector(COPY_BUTTON_SELECTOR);
-    copyButton.style.visibility = 'visible';
+    copyButton.style.display = 'initial';
 }
 
-function showNoContentMessage(){
+function setupForNoContentMessage(){
     let noContentDiv = document.querySelector(NO_CONTENT_MESSAGE_SELECTOR);
-    noContentDiv.style.visibility = 'visible';
+    noContentDiv.style.display = 'flex';
+    let resultText = document.querySelector(DISPLAY_RESULT_SELECTOR);
+    resultText.style.display = 'none';
     let copyButton = document.querySelector(COPY_BUTTON_SELECTOR);
-    copyButton.style.visibility = 'hidden';
+    copyButton.style.display = 'none';
 }

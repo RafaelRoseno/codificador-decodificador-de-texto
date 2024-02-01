@@ -40,6 +40,7 @@ body{
     justify-content: space-between;
     gap: 50px;
     padding: 5% 15%;
+    box-sizing: border-box;
 }
 
 .main-container__input-area{
@@ -105,19 +106,18 @@ body{
     height: 100%;
     border-radius: 20px;
     padding: 2% 2%;
-    overflow-y:auto;
     background-color: #fff;
     display: flex;
     flex-direction: column;
+    gap: 20px;
 }
 
 .main-container__display-area__no-content{
-    height: 95%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 20px;
-    visibility: visible;
 }
 
 .main-container__display-area__no-content__h3{
@@ -137,18 +137,21 @@ body{
 }
 
 .main-container__display-area__result{
+    display: none;
+    height: 100%;
     font-family: var(--primary-font);
     font-weight: 400;
     font-size: var(--tertiary-font-size);
     color: var(--neutral-color);
     word-break: break-all;
+    overflow-y:auto;
 }
 
 .main-container__display-area__no-content__copy-button{
     width: 100%;
+    display: none;
     padding: 24px 0;
     border-radius: 24px;
-    visibility: hidden;
     background-color: #fff;
     color: var(--primary-color);
     border: 1px solid var(--primary-color);

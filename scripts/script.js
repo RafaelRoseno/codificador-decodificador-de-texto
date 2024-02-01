@@ -13,20 +13,15 @@ const DECRYPTION_REFERENCES = [
     ['u', 'o', 'i', 'e', 'a']
 ];
 
-// Processa a criptografia do texto inserido pelo usuario
-function processEncrypt(){
-    const textToEncrypt = getTextAreaContent();
-    if (!textToEncrypt) return;
-    const encrypted = replaceAllExpressions(textToEncrypt.value, ENCRYPTION_REFERENCES);
-    outputProcess(encrypted, textToEncrypt);
-}
-
-// Processa a descriptografia do texto inserido pelo usuario
-function processDecrypt() {
-    const textToDecrypt = getTextAreaContent();
-    if (!textToDecrypt) return;
-    const decrypted = replaceAllExpressions(textToDecrypt.value, DECRYPTION_REFERENCES);
-    outputProcess(decrypted, textToDecrypt);
+// Processa a criptografia/descriptografia do texto inserido pelo usuario
+// encryption = true -> criptografa
+// encryption = false -> descriptografa
+function encryptOrDecrypt(encryption){
+    const textArea = getTextArea();
+    if (!textArea) return;
+    const selector = encryption ? ENCRYPTION_REFERENCES : DECRYPTION_REFERENCES;
+    const processedResult = replaceAllExpressions(textArea.value, selector);
+    outputProcess(processedResult, textArea);
 }
 
 // Processa as etapas exibicao do texto na tela
@@ -52,7 +47,7 @@ function copy() {
     navigator.clipboard.writeText(textForCopy.textContent);
 }
 
-function getTextAreaContent() {
+function getTextArea() {
     const inputText = document.querySelector(TEXTAREA_SELECTOR);
     if (inputText.value.length == 0){
         showResult('');

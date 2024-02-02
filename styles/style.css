@@ -39,12 +39,12 @@ body{
 }
 
 .main-container{
-    height: 80%;
+    height: 90%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 50px;
-    padding: 5% 15%;
+    gap:15%;
+    padding: 40px 5% 40px 15%;
     box-sizing: border-box;
 }
 
@@ -87,6 +87,7 @@ body{
     width: 50%;
     padding: 24px 0;
     border-radius: 24px;
+    font-size: var(--tertiary-font-size);
 }
 
 .main-container__input-area__encrypt{
@@ -114,7 +115,7 @@ body{
     width: 30%;
     height: 100%;
     border-radius: 20px;
-    padding: 2% 2%;
+    padding: 20px 20px 15px 20px;
     background-color: var(--neutral-light-color);
     display: flex;
     flex-direction: column;
@@ -150,9 +151,9 @@ body{
     height: 100%;
     font-family: var(--primary-font);
     font-weight: 400;
-    font-size: var(--tertiary-font-size);
+    font-size: var(--secundary-font-size);
     color: var(--neutral-dark-color);
-    word-break: break-all;
+    word-break: break-word;
     overflow-y:auto;
 }
 
@@ -164,7 +165,7 @@ body{
     background-color: var(--neutral-light-color);
     color: var(--primary-color);
     border: 1px solid var(--primary-color);
-
+    font-size: var(--tertiary-font-size);
 }
 
 .main-container__display-area__no-content__copy-button:hover{
@@ -205,5 +206,62 @@ body{
     width: 30px;
     height: 30px;
 }
+
+/* estilo da scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--neutral-light-color);
+}
+
+ ::-webkit-scrollbar-thumb {
+    background: var(--tertiary-color);
+}
+
+@media (max-width: 1300px) {
+
+    .header-container{
+        padding: 20px 5%;
+    }
+
+    .main-container{
+        flex-direction: column;
+        padding: 40px 5%;
+        gap: 50px;
+    }
+
+    .main-container__input-area{
+        width: 100%;
+    }
+
+    .main-container__display-area{
+        width: 97%;
+        height: 30%;
+    }
+
+    .main-container__display-area__no-content__image{
+        display: none;
+    }
+
+    .main-container__display-area__result{
+        overflow-y: scroll;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .main-container__input-area__buttons{
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .main-container__input-area__buttons input{
+        width: 100%;
+    }
+}
+
+
 
 

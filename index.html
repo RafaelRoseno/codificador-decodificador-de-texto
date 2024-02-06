@@ -1,14 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="styles/style.css">
-    <title>Decodificador</title>
+    <title>Decodificador de texto</title>
+    <link rel="icon" type="image/x-icon" href="assets/cryptography.png">
 </head>
 <body>
-    <h1>Decodificador</h1>
-
+    <header class="header-container">
+        <img src="assets/cryptography.png" alt="cadeado">
+    </header>
+    <main class="main-container">
+        <section class="main-container__input-area">
+            <textarea class="main-container__input-area__textarea" placeholder="Digite seu texto"></textarea>
+            <div class="main-container__input-area__alert">
+                <img src="assets/bi_exclamation-circle-fill.png">
+                <p>Apenas letras minúsculas e sem acento.</p>
+            </div>
+            <div class="main-container__input-area__buttons">
+                <input class="main-container__input-area__encrypt" onclick="encryptOrDecrypt(true)" type="button" value="Criptografar"/>
+                <input class="main-container__input-area__decrypt" onclick="encryptOrDecrypt(false)" type="button" value="Descriptografar"/>
+            </div>
+        </section>
+        <section class="main-container__display-area">
+            <p class="main-container__display-area__result"></p>
+            <div class="main-container__display-area__no-content">
+                <img class="main-container__display-area__no-content__image" src="assets/no-content.svg" alt="Homem observando diamante com uma lupa">
+                <p class="main-container__display-area__no-content__h3">Nenhuma mensagem encontrada</p>
+                <p class="main-container__display-area__no-content__h4">Digite o texto que você deseja criptografar ou descriptografar.</p>
+            </div>
+            <input class="main-container__display-area__no-content__copy-button" onclick="copy()" type="button" value="Copiar"/>
+        </section>
+    </main>
+    <footer class="footer-container">
+        <p class="footer-container__text">Desenvolvido por Rafael Roseno </p>
+        <div class="footer-container__navigation">
+            <a class="footer-container__navigation__link" href="https://www.linkedin.com/in/rafaelroseno/" target="_blank" rel="noopener noreferrer"> 
+                <img class="footer-container__navigation__link__image" src="assets/linkedin.png" alt="logo do Linkedin">
+            </a>
+            <a class="footer-container__navigation__link" href="https://github.com/RafaelRoseno" target="_blank" rel="noopener noreferrer"> 
+                <img class="footer-container__navigation__link__image" src="assets/github.png" alt="logo do Github">
+            </a>
+        </div>
+    </footer>
     <script src="scripts/script.js" defer></script>
 </body>
 </html>

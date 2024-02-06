@@ -13,6 +13,10 @@ Este projeto foi desenvolvido utilizando as tecnologias HTML5, CSS3 e JavaScript
 Esta aplicação permite a criptografia e descriptografia de textos. O usuário pode inserir um texto a ser criptografado ou um texto já criptografado para ser descriptografado.      
 
 
+Você pode visualizar o projeto em execução nas plataformas:  
+<a href="https://rafaelroseno.github.io/codificador-decodificador-de-texto/" target="_blank"><img loading="lazy" src="https://img.shields.io/badge/github%20pages-121013?style=for-the-badge&logo=github&logoColor=white"></a>
+<a href="https://decodificador-de-texto-pj6a.vercel.app/" target="_blank"><img loading="lazy" src="https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white"></a>
+<a href="https://rafaelroseno.com/portfolio/encrypt-decrypt-text/" target="_blank"><img loading="lazy" src="https://img.shields.io/badge/personal-000?style=for-the-badge&logo=Microsoft-edge&logoColor=%23F7DF1E"></a>
 
 ### 🛠️ Como Utilizar
 1. Abra o arquivo index.html em seu navegador.
